@@ -1,7 +1,7 @@
 import React from 'react'
 import App from './App'
 import Home from './Home'
-import MyTrips from './My Trips'
+import MyTrips from './MyTrips'
 import AddTrip from './Add Trip'
 
 const routes = [
