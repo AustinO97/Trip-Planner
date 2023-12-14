@@ -23,6 +23,7 @@ function App() {
 
   const handleAddTrip = (newTrip) => {
     setMyTrips([...myTrips, newTrip])
+    navigate('/mytrips')
   }
 
   return (
