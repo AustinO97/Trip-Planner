@@ -1,8 +1,8 @@
 import React from 'react'
-import App from './App'
-import Home from './Home'
-import MyTrips from './MyTrips'
-import AddTrip from './Add Trip'
+import App from './Components/App'
+import Home from './Components/Home'
+import MyTrips from './Components/MyTrips'
+import AddTrip from './Components/Add Trip'
 
 const routes = [
   {
