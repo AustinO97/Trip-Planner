@@ -12,6 +12,13 @@ function App() {
     .then(data => setTrips(data))
   }, [])
 
+  const handleAddTripBtn = (addTrip) => {
+    const addNewTrip = myTrips.find((trip) => trip.id === addTrip.id)
+    if (!addNewTrip) {
+      setMyTrips([...myTrips, addTrip])
+    }
+  }
+
   const handleAddTrip = (newTrip) => {
     setMyTrips([...myTrips, newTrip])
   }
@@ -21,7 +28,7 @@ function App() {
       <header>
           <NavBar />
       </header>
-      <Outlet context={{trips: trips, handleAddTrip: handleAddTrip, myTrips: myTrips}} />
+      <Outlet context={{trips: trips, handleAddTrip: handleAddTrip, myTrips: myTrips, handleAddTripBtn: handleAddTripBtn}} />
     </>
   );
 }
