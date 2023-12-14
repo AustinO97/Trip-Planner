@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 function App() {
   const [trips, setTrips] = useState([])
   const [myTrips, setMyTrips] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch('http://localhost:3000/places')
@@ -16,6 +17,7 @@ function App() {
     const addNewTrip = myTrips.find((trip) => trip.id === addTrip.id)
     if (!addNewTrip) {
       setMyTrips([...myTrips, addTrip])
+      navigate('/mytrips')
     }
   }
 
