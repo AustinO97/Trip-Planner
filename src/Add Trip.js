@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Outlet, useOutletContext } from 'react-router-dom'
+import { useOutletContext } from 'react-router-dom'
 
 
 const AddTrip = () => {
