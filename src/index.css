@@ -10,7 +10,19 @@ h1 {
   color: #051c33;
 }
 
+h4 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button {
+  background-color: lightskyblue;
+  color: black;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
 }
