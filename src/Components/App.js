@@ -21,6 +21,11 @@ function App() {
     }
   }
 
+  const handlDeleteTrip = (deletedTrip) => {
+    const updatedTrips = trips.filter((trip) => trip.id !== deletedTrip.id)
+    setTrips(updatedTrips)
+  }
+
   const handleAddTrip = (newTrip) => {
     setMyTrips([...myTrips, newTrip])
     navigate('/mytrips')
@@ -31,7 +36,14 @@ function App() {
       <header>
           <NavBar />
       </header>
-      <Outlet context={{trips: trips, handleAddTrip: handleAddTrip, myTrips: myTrips, handleAddTripBtn: handleAddTripBtn}} />
+      <Outlet 
+      context={{
+      trips: trips, 
+      handleAddTrip: handleAddTrip, 
+      myTrips: myTrips, 
+      handleAddTripBtn: handleAddTripBtn, 
+      handlDeleteTrip: handlDeleteTrip
+    }}/>
     </>
   );
 }
