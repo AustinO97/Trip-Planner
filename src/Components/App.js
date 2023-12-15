@@ -24,6 +24,8 @@ function App() {
   const handlDeleteTrip = (deletedTrip) => {
     const updatedTrips = trips.filter((trip) => trip.id !== deletedTrip.id)
     setTrips(updatedTrips)
+    const updatedMyTrips = myTrips.filter((trip) => trip.id !== deletedTrip.id)
+    setMyTrips(updatedMyTrips)
   }
 
   const handleAddTrip = (newTrip) => {
