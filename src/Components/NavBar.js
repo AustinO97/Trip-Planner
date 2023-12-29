@@ -12,16 +12,16 @@ function NavBar() {
         Home
       </NavLink>
       <NavLink
-        to="/mytrips"
+        to="/new"
         className="nav-link"
       >
-        My Trips
+        New
       </NavLink>
       <NavLink
-        to='/add trip'
+        to='/about'
         className="nav-link"
       >
-        Add Trip
+        About
       </NavLink>
     </nav>
   );

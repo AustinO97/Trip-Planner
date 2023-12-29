@@ -9,7 +9,7 @@ const MyTrips = () => {
 
   return (
     <>
-      <h2>My Trips!</h2>
+      <h2>About Trip Planner</h2>
       <div>
         {myAddedTrips}
       </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import App from './Components/App'
 import Home from './Components/Home'
-import MyTrips from './Components/MyTrips'
+import MyTrips from './Components/About'
 import AddTrip from './Components/Add Trip'
 
 const routes = [
@@ -14,11 +14,11 @@ const routes = [
         element: <Home />
       },
       {
-        path: '/mytrips',
+        path: '/about',
         element: <MyTrips />
       },
       {
-        path: '/add trip',
+        path: '/new',
         element: <AddTrip />
       }
     ]

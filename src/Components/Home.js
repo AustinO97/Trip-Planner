@@ -1,4 +1,4 @@
-import { Outlet, useOutletContext } from 'react-router-dom'
+import { useOutletContext } from 'react-router-dom'
 import Trips from './Trips'
 
 const Home = () => {
@@ -13,7 +13,6 @@ const Home = () => {
           <h1>
             Trip Planner
           </h1>
-            <Outlet />
             {startingTrips}
       </div>
   )
