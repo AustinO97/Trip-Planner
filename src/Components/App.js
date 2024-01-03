@@ -4,7 +4,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 
 function App() {
   const [trips, setTrips] = useState([])
-  const [myTrips, setMyTrips] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -13,25 +13,17 @@ function App() {
     .then(data => setTrips(data))
   }, [])
 
-  const handleAddTripBtn = (addTrip) => {
-    const addNewTrip = myTrips.find((trip) => trip.id === addTrip.id)
-    if (!addNewTrip) {
-      setMyTrips([...myTrips, addTrip])
-      navigate('/mytrips')
-    }
-  }
-
   const handlDeleteTrip = (deletedTrip) => {
-    const updatedTrips = trips.filter((trip) => trip.id !== deletedTrip.id)
+    const updatedTrips = trips.filter((tripObj) => tripObj.id !== deletedTrip.id)
     setTrips(updatedTrips)
-    const updatedMyTrips = myTrips.filter((trip) => trip.id !== deletedTrip.id)
-    setMyTrips(updatedMyTrips)
   }
 
   const handleAddTrip = (newTrip) => {
-    setMyTrips([...myTrips, newTrip])
-    navigate('/mytrips')
+    setTrips([...trips, newTrip])
+    navigate('/')
   }
+
+  const filteredTrips = trips.filter((tripObj) => tripObj.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
   return (
     <>
@@ -40,10 +32,9 @@ function App() {
       </header>
       <Outlet 
       context={{
-      trips: trips, 
-      handleAddTrip: handleAddTrip, 
-      myTrips: myTrips, 
-      handleAddTripBtn: handleAddTripBtn, 
+      trips: filteredTrips, 
+      setSearchTerm: setSearchTerm,
+      handleAddTrip: handleAddTrip,  
       handlDeleteTrip: handlDeleteTrip
     }}/>
     </>

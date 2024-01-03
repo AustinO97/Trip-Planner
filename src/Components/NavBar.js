@@ -9,19 +9,19 @@ function NavBar() {
         to="/"
         className="nav-link"
       >
-        Home
+        About
+      </NavLink>
+      <NavLink
+        to='/trips'
+        className="nav-link"
+      >
+        Trips
       </NavLink>
       <NavLink
         to="/new"
         className="nav-link"
       >
         New
-      </NavLink>
-      <NavLink
-        to='/about'
-        className="nav-link"
-      >
-        About
       </NavLink>
     </nav>
   );

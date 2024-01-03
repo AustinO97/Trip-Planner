@@ -1,20 +1,14 @@
 import React from 'react'
-import { useOutletContext } from 'react-router-dom'
-import Trips from './Trips'
 
-const MyTrips = () => {
-  const { myTrips } = useOutletContext()
-
-  const myAddedTrips = myTrips.map((trip) => <Trips key={trip.id} trip={trip} />)
+const About = () => {
 
   return (
     <>
       <h2>About Trip Planner</h2>
-      <div>
-        {myAddedTrips}
-      </div>
+      <p>Click on Trips to see trips we think you'll love!</p>
+      <p>Click on New to add your dream trip!</p>
     </>
   )
 }
 
-export default MyTrips
+export default About

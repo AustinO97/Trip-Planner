@@ -1,26 +1,31 @@
-import React from 'react'
 import { useOutletContext } from 'react-router-dom'
+import TripCard from './TripCard'
 
-const Trips = ({ trip }) => {
-    const { name, image, description, id } = trip
-    const { handleAddTripBtn, handlDeleteTrip } = useOutletContext()
+const Trips = () => {
+  const { trips, setSearchTerm } = useOutletContext()
 
-    const handleDelete = () => {
-      fetch(`http://localhost:3000/places/${id}`, {
-        method: 'DELETE',
-      })
-      .then(res => res.json())
-      .then(() => handlDeleteTrip(trip))
-    }
+  const startingTrips = trips.map((trip) => {
+    return <TripCard key={trip.id} trip={trip} />
+  })
+
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  }
 
   return (
-    <div>
-        <h4>{name}</h4>
-        <img src={image} alt={name} />
-        <br/>
-            <button onClick={() => handleAddTripBtn(trip)}>Add Trip</button> <button onClick={handleDelete}>Remove Trip</button>
-        <p>Description: {description}</p>
-    </div>
+      <div>
+          <h1>
+            Trip Planner
+          </h1>
+          <form>
+            <input 
+            type="text/"
+            placeholder='Search Trips...'
+            onChange={handleChange}
+            />
+          </form>
+            {startingTrips}
+      </div>
   )
 }
 

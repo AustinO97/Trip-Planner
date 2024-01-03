@@ -1,8 +1,8 @@
 import React from 'react'
 import App from './Components/App'
-import Home from './Components/Home'
-import MyTrips from './Components/About'
+import Trips from './Components/Trips'
 import AddTrip from './Components/Add Trip'
+import About from './Components/About'
 
 const routes = [
   {
@@ -11,11 +11,11 @@ const routes = [
     children: [
       {
         path: '/',
-        element: <Home />
+        element: <About />
       },
       {
-        path: '/about',
-        element: <MyTrips />
+        path: '/Trips',
+        element: <Trips />
       },
       {
         path: '/new',
