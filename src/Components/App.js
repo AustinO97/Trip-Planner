@@ -20,7 +20,7 @@ function App() {
 
   const handleAddTrip = (newTrip) => {
     setTrips([...trips, newTrip])
-    navigate('/')
+    navigate('/Trips')
   }
 
   const filteredTrips = trips.filter((tripObj) => tripObj.name.toLowerCase().includes(searchTerm.toLowerCase()))
