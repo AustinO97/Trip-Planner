@@ -18,7 +18,7 @@ function NavBar() {
         Trips
       </NavLink>
       <NavLink
-        to="/new"
+        to="/trips/new"
         className="nav-link"
       >
         New
